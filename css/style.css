@@ -1,0 +1,305 @@
+@keyframes textAppear {
+    from {opacity: 0.05;}
+    to {opacity: 1;}
+}
+
+#animation { 
+    opacity: 0.05;
+    animation: textAppear 4s ease 2500ms forwards;
+}
+
+body {
+  width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+  }
+
+h5 {
+  color: #05057c;
+}
+
+.navbar {
+  height: 3rem; 
+  }
+
+.sliderTitle {
+    font-size: 1.3rem;
+    color: hsl(240, 16%, 18%)
+  }
+
+.prev,
+.next {
+  height: 100%;
+  position: absolute;
+  display: flex; 
+  visibility: hidden;
+  justify-content: center;
+  align-items: center;
+  z-index: 1; 
+  background-color: rgba(5, 5, 8, 0.7); 
+  background-size: cover;
+  cursor: pointer; 
+  z-index: 1;
+  font-weight: bold;
+  font-size: 2rem;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none; 
+  color: white;
+  opacity: 0;         
+}
+
+.next {
+  border-radius: 3px 0 0 3px;
+}
+
+.slide {
+  width: 68%;
+  margin: 0 3px;
+  border-radius: 2px;
+  border: none !important;
+}
+
+.card-body {
+  padding: 0.3rem; 
+  display: flex; 
+  border-radius: 0 0 2px 2px;
+}
+
+.card-body i {
+  padding: 1rem;
+  margin: auto;
+  align-self: center; 
+}
+
+.card-text {
+  font-size: 1.2rem;
+  margin: 0.2rem; 
+}
+
+.frameholder {
+  position: relative;  
+}
+
+.image-wrapper {
+  border-radius: 2% 2% 0 0;
+}
+  
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 100002; /* Sit on top */
+  padding-top: 5px; /* Location of the box */
+  padding-bottom: 5px;
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.925); /* Black w/ opacity */
+  scrollbar-width: none; 
+  -ms-overflow-style: none;  
+}
+
+.modal::-webkit-scrollbar {
+  display: none;
+}
+
+/* Modal Content */
+.modal-content {
+  display: flex; 
+  flex-direction: column; 
+  overflow-y: auto;
+  background-color: #fff;
+  color: black;
+  width: 90vw;
+  max-height: 80vh; 
+  margin: auto;
+  border: 2px solid #05057c;
+  border-radius: 7px;
+  
+}
+
+.modal-content-wrapper {
+  display: flex; 
+  flex-direction: column;
+  padding: 0.6rem;
+}
+
+.modal-content-text {
+  width: 100%; 
+  display: flex; 
+  text-align: justify; 
+  flex-direction: column; 
+  margin-bottom: 0.6rem;
+}
+
+.modal-content-image {
+  width: 100%; 
+  margin: auto;
+  padding: 1rem 0; 
+  border-top: 1px solid grey ;
+}
+
+.modal-content img {
+  width: 100%; 
+  height: auto;
+}
+
+.close {
+  color: grey;
+  right: 0; 
+  margin-top: -0.5rem; 
+  font-size: 2.4rem;
+  font-weight: bold;
+ 
+}
+
+.close:hover,
+.close:focus {
+  cursor: pointer;
+  color: rgba(0,0,0,0.8);
+}
+
+#about {
+  display:flex; 
+  flex-direction: column;
+}
+
+.profile-picture { 
+  float: right; 
+  width: 2rem;
+  height: auto;
+  margin-right: -2rem; 
+}
+
+.cirkelbeton { 
+  float: left; 
+  width: 2rem;
+  height: auto; 
+}
+
+.icons-row {
+  margin-top: 5rem; 
+  display: none; 
+  justify-content: space-around; 
+  align-items: stretch; 
+  width: 100%;
+}
+
+@media only screen and (min-width: 560px) {
+  .slide {
+    width: 32%;  
+  }
+
+  .profile-picture {
+    width: 15rem; 
+    margin-right: 0;
+  }
+
+  .icons-row {
+    display: flex; 
+  }
+}    
+  
+@media all and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio : 1.5) {
+    
+  .scroller {   
+    -ms-overflow-style: none; /* IE, Edge */
+    scrollbar-width: none; /* Firefox ? */
+    -webkit-overflow-scrolling: touch; 
+  } 
+
+  .scroller::-webkit-scrollbar {
+    display: none; 
+  } 
+
+  .frameholder {
+    overflow-x: scroll;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch; 
+  }
+  
+  .frameholder::-webkit-scrollbar {
+    display: none; 
+  }
+}
+  
+@media only screen and (min-width: 895px) {
+    
+    .slide {
+      width: 23.5%; 
+    }
+  
+    .slider {
+      margin-left: -20.5%; 
+    }
+
+    .prev {
+      left: 1rem;
+    }
+
+    .next {
+      right: 1rem;
+    }
+
+    .modal-content {
+      width: 75vw; 
+    }
+    
+    .modal-content-wrapper {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 1rem 0; 
+    }
+    
+    .modal-content-text {
+      width: 60%; 
+      flex-direction: column; 
+      justify-content: space-between;
+      margin-bottom: 0;
+      border-right: 2px solid grey;
+      text-align: justify;
+      padding: 0 2rem; 
+    }
+    
+    .modal-content-image {
+      width: 40%; 
+      padding: 0;  
+      border-top: none;
+      text-align: center;
+    }
+
+    .modal-content-image img {
+      width: 76%;
+      max-height: 50vh; 
+    }
+
+    .profile-picture {
+      width: 12rem; 
+      margin-left: 4rem;
+    }
+
+    .cirkelbeton { 
+      width: 14rem; 
+    }
+
+    #about p {
+      margin: 1rem 4rem 1rem 0;
+    }
+
+    #about-me img {
+      margin-left: 8rem; 
+    }
+
+    #beton p {
+      margin: 1rem 4rem 1rem 0;
+    }
+
+    #waarombeton img {
+      margin-right: 5rem; 
+    }
+}

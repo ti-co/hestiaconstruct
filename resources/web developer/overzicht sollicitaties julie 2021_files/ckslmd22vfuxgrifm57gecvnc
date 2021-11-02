@@ -1,0 +1,704 @@
+define.alias("artdeco-button/components/artdeco-button","participate-text-editor/components/artdeco-button")
+define.alias("artdeco-modal/components/artdeco-confirmation-dialog","participate-text-editor/components/artdeco-confirmation-dialog")
+define.alias("artdeco-dropdown/components/artdeco-dropdown-content","participate-text-editor/components/artdeco-dropdown-content")
+define.alias("artdeco-dropdown/components/artdeco-dropdown-header","participate-text-editor/components/artdeco-dropdown-header")
+define.alias("artdeco-dropdown/components/artdeco-dropdown-item","participate-text-editor/components/artdeco-dropdown-item")
+define.alias("artdeco-dropdown/components/artdeco-dropdown-trigger","participate-text-editor/components/artdeco-dropdown-trigger")
+define.alias("artdeco-dropdown/components/artdeco-dropdown","participate-text-editor/components/artdeco-dropdown")
+define.alias("artdeco-modal/components/container","participate-text-editor/components/artdeco-modal-container")
+define.alias("artdeco-modal/components/artdeco-modal-content","participate-text-editor/components/artdeco-modal-content")
+define.alias("artdeco-modal/components/artdeco-modal-footer","participate-text-editor/components/artdeco-modal-footer")
+define.alias("artdeco-modal/components/artdeco-modal-header","participate-text-editor/components/artdeco-modal-header")
+define.alias("artdeco-modal/components/artdeco-modal","participate-text-editor/components/artdeco-modal")
+define.alias("ember-vector-images/components/custom-image","participate-text-editor/components/custom-image")
+define.alias("ember-wormhole/components/ember-wormhole","participate-text-editor/components/ember-wormhole")
+define.alias("ember-vector-images/components/lazy-background","participate-text-editor/components/lazy-background")
+define.alias("ember-vector-images/components/lazy-image","participate-text-editor/components/lazy-image")
+define.alias("artdeco-icons-web/components/linkedin-logo","participate-text-editor/components/linkedin-logo")
+define("participate-text-editor/components/text-editor-container",["exports"],(function(e){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+const t=Ember.HTMLBars.template({id:"KUYdCeoW",block:'{"symbols":["typeahead","@controlName","@cursorRange","@disabled","@groupIdForMentionsTypeahead","@initialContent","@jumpLinkTarget","@lineHeightOffSet","@onEditorFocus","@onFoundUrl","@onSubmitCommentOnEnter","@placeholder","@recommendedMention","@scrollableContainerSelector","@setFocusEditorHandler","@setInsertContentHandler","@setResetEditorHandler","@shouldFocusOnRender","@textChangeHandler","@trackableRootObject","@useScrollY"],"statements":[[8,"basic-typeahead@basic-typeahead",[],[["@alwaysExpanded"],[true]],[["default"],[{"statements":[[2,"\\n  "],[8,"participate-text-editor@text-editor",[],[["@ariaActiveId","@arrowKeyPressed","@controlName","@cursorRange","@disabled","@enterKeyPressed","@groupIdForMentionsTypeahead","@initialContent","@jumpLinkTarget","@lineHeightOffSet","@onEditorFocus","@onFoundUrl","@onSubmitCommentOnEnter","@placeholder","@recommendedMention","@scrollableContainerSelector","@setFocusEditorHandler","@setInsertContentHandler","@setResetEditorHandler","@shouldFocusOnRender","@textChangeHandler","@trackableRootObject","@triggered-content","@triggeredContentId","@useScrollY"],[[32,1,["ariaActiveId"]],[32,1,["arrowKeyPressed"]],[32,2],[32,3],[32,4],[32,1,["enterKeyPressed"]],[32,5],[32,6],[32,7],[32,8],[32,9],[32,10],[32,11],[32,12],[32,13],[32,14],[32,15],[32,16],[32,17],[32,18],[32,19],[32,20],[32,1,["triggered-content"]],[32,1,["triggeredContentId"]],[32,21]]],null],[2,"\\n"]],"parameters":[1]}]]]],"hasEval":false,"upvars":[]}',meta:{moduleName:"participate-text-editor/components/text-editor-container.hbs"}})
+var i=Ember._setComponentTemplate(t,Ember._templateOnlyComponent())
+e.default=i}))
+define("participate-text-editor/components/text-editor",["exports","@babel/runtime/helpers/esm/initializerDefineProperty","@babel/runtime/helpers/esm/defineProperty","@babel/runtime/helpers/esm/applyDecoratedDescriptor","@babel/runtime/helpers/esm/initializerWarningHelper","@glimmer/component","global-utils/utils/keyboard-utils","participate-text-editor/utils/constants","participate-text-editor/utils/text-editor-utils","participate-text-editor/utils/editor-setup","global-utils/utils/is-browser","participate-text-editor/utils/quill/utils","participate-text-editor/utils/quill/delta-model-transformers","global-utils/utils/url","ember-lifeline","participate-text-editor/utils/tracking/texteditor-tracking","ember-cli-pemberly-tracking/utils/tracking","participate-text-editor/utils/tracking/mentions-tracking","participate-text-editor/utils/tracking/hashtag-tracking"],(function(e,t,i,n,r,o,a,s,l,d,c,u,h,p,m,g,f,T,b){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var y,E,x,v,S,_,A,k,M,O,I,w,C,N,P,q,D,H,R,L,j,U,Y,F
+const W=Ember.HTMLBars.template({id:"GbVmtSUU",block:'{"symbols":["queryFunction","@triggered-content","@groupIdForMentionsTypeahead","&attrs","@jumpLinkTarget","@controlName","@disabled","@ariaActiveId"],"statements":[[11,"div"],[24,0,"editor-container"],[17,4],[12],[2,"\\n  "],[11,"div"],[4,[38,5],[[32,0,["initEditor"]]],null],[12],[2,"\\n    "],[11,"div"],[24,0,"editor-content"],[16,"data-jump-link-target",[32,5]],[16,"ondragover",[32,0,["onEditorDragover"]]],[4,[38,6],[[32,6]],null],[4,[38,7],[[32,0,["onDisabledAttrChange"]],[32,7]],null],[4,[38,8],["aria-activedescendant"],[["value","selector"],[[32,8],".ql-editor"]]],[4,[38,9],[[32,0,["onEditorEvents"]]],null],[12],[2,"\\n    "],[13],[2,"\\n\\n"],[6,[37,3],[[32,0,["isTypeaheadAbleToExpand"]]],null,[["default"],[{"statements":[[6,[37,4],[[30,[36,3],[[32,0,["mentionShouldOpen"]],[30,[36,3],[[32,3],[30,[36,1],null,[["transform","queryContext","type","useCase"],[[32,0,["transformTypeaheadResponse"]],[30,[36,2],null,[["groupId"],[[32,3]]]],"GROUP_MEMBERS","MENTIONS"]]],[30,[36,1],null,[["transform","useCase"],[[32,0,["transformTypeaheadResponse"]],"MENTIONS"]]]],null],[30,[36,0],null,[["commentary"],[[32,0,["commentary"]]]]]],null]],null,[["default"],[{"statements":[[2,"        "],[8,"participate-text-editor@typeahead-fetch",[],[["@fetchFn","@typeaheadQuery","@onTypeaheadResultsRendered","@typeaheadSelect","@triggered-content","@debouncePeriod"],[[32,1],[32,0,["typeaheadQuery"]],[32,0,["onTypeaheadResultsRendered"]],[32,0,["typeaheadSelect"]],[32,2],[32,0,["typeaheadDebouncePeriod"]]]],null],[2,"\\n"]],"parameters":[1]}]]]],"parameters":[]}]]],[2,"  "],[13],[2,"\\n"],[13],[2,"\\n"]],"hasEval":false,"upvars":["search-ta-kit@fetch-hashtag-recommendations","search-ta-kit@fetch-results","hash","if","let","did-insert","ember-cli-pemberly-tracking@track-interaction","did-update","global-modifiers@set-attr","participate-text-editor@editor-events"]}',meta:{moduleName:"participate-text-editor/components/text-editor.hbs"}})
+let z=(y=Ember.inject.service("tracking"),E=Ember.inject.service("lix"),x=Ember.inject.service("i18n"),v=Ember._tracked,S=Ember._tracked,_=Ember._tracked,A=Ember._tracked,k=Ember._tracked,M=Ember._action,O=Ember._action,I=Ember._action,w=Ember._action,C=Ember._action,N=Ember._action,P=Ember._action,q=class extends o.default{constructor(){super(...arguments);(0,t.default)(this,"tracking",D,this);(0,t.default)(this,"lix",H,this);(0,t.default)(this,"i18n",R,this);(0,t.default)(this,"hashtagShouldOpen",L,this);(0,t.default)(this,"mentionShouldOpen",j,this);(0,t.default)(this,"workflowId",U,this);(0,t.default)(this,"typeaheadQuery",Y,this);(0,t.default)(this,"commentary",F,this)}get isTypeaheadAbleToExpand(){return this.hashtagShouldOpen||this.mentionShouldOpen}get texteditorTracker(){return new g.default(this.tracking,this.workflowId)}get dropDownIsActive(){return this.isTypeaheadAbleToExpand&&Ember.isPresent(this.args.ariaActiveId)}get typeaheadDebouncePeriod(){return this.lix.getTreatmentValue("voyager.web.search-debounce-mentions-typeahead")||0}_getRecommendedMentionFromResultsList(e){const{recommendedMention:t}=this.args
+return t?e.filter((e=>Ember.get(e,"objectUrn")===Ember.get(t,"objectUrn")))[0]:null}_filterTypeaheadResults(e){const t=this._getRecommendedMentionFromResultsList(e),i=e.filter((e=>!["ESCAPE_HATCH","AUTO_COMPLETE"].includes(Ember.get(e,"type"))))
+if(t){i.removeObject(t)
+i.unshiftObject(t)
+return i}if(this.shouldShowRecommendedMentionActor&&this.args.recommendedMention){i.unshiftObject(this.args.recommendedMention)
+return i}return i}_setupScrollHandler(){if(c.default){const e=document.querySelector(this.args.scrollableContainerSelector)
+this.scrollableContainerEl=e
+e&&(0,m.addEventListener)(this,e,"scroll",this._onScroll)}}_onScroll(){(0,m.throttleTask)(this,"_closeTypeahead",100)}willDestroy(){super.willDestroy.apply(this,arguments);(0,m.runDisposables)(this)
+this.scrollableContainerEl&&(0,m.removeEventListener)(this,this.scrollableContainerEl,"scroll",this._onScroll)}_dismissTypeaheadWithoutSelection(){var e
+this.isDestroying||null===(e=this.onDismissWithoutSelection)||void 0===e||e.call(this,this.typeaheadQuery)}_generateNewWorkflowId(){this.workflowId=(0,f.generateTrackingId)()}_insertContent(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},t=arguments.length>1&&void 0!==arguments[1]&&arguments[1]
+t?this._insertTextAtCursor(e.text):this._appendTextAndMentions(e)}_resetEditor(){let e=arguments.length>0&&void 0!==arguments[0]&&arguments[0]
+const{editor:t}=this
+t.setContents([])
+e&&t.history.clear()}_focusEditor(){const{editor:e}=this
+e.focus()}_insertTextAtCursor(e){if(!e)return
+const{editor:t}=this,{index:i=0}=t.getSelection(!0),n=t.getText()
+let r=e
+i>0&&!/\s/.test(n[i-1])&&(r=` ${r}`);["#","＃"].includes(e)||/\s/.test(r[r.length-1])||(r=`${r} `)
+t.insertText(i,r,"user")
+t.setSelection(i+r.length,0)}_appendTextAndMentions(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{}
+const{editor:i}=this,{text:n,mentions:r}=e
+if(n||r){const n=(0,h.deltaFromTextMentionsObject)(e),r=i.getContents(0,i.getLength()-1)
+i.setContents(r.concat(n))
+const{startCursor:o=i.getLength(),endCursor:a=0}=t
+i.setSelection(o,a)}}_handleReportedTextChanges(e){var t,i
+if(!e)return
+const{mentions:n,text:r}=(0,h.deltaToTextMentionsObject)(e),o=e.ops.rejectBy("attributes").reduce(((e,t)=>e.concat((0,p.getUrlsFromText)(t.insert))),[])
+if(o.length){var a,s
+null===(a=(s=this.args).onFoundUrl)||void 0===a||a.call(s,o[0])}null===(t=(i=this.args).textChangeHandler)||void 0===t||t.call(i,n,r.trimEnd())}_handleArrowKey(e,t){var i,n
+e.preventDefault()
+null===(i=(n=this.args).arrowKeyPressed)||void 0===i||i.call(n,t)}_setShouldShowRecommendedMentionActor(e){const t=Ember.get(this.args,"recommendedMention.text.text"),i=t&&(0,l.mentionQueryMatchesRecommendedMention)(t,e)
+this.shouldShowRecommendedMentionActor=i}_openTypeahead(e){let{typeaheadQuery:t,onTypeaheadSelect:i,typeaheadType:n,onDismissWithoutSelection:r}=e
+if(c.default&&!this.editorWrapperElement.contains(document.activeElement))return
+const{editor:o}=this
+this.typeaheadType=n
+if(o){this.commentary=o.getText()
+this.typeaheadQuery=t
+this.onTypeaheadSelect=i
+this.onDismissWithoutSelection=r
+this.typeaheadTopPosition=this._calculateTypeaheadTopOffset()
+this[`${n}ShouldOpen`]=!0
+this._setShouldShowRecommendedMentionActor(t)}}_handleFocusOut(e){let{relatedTarget:t}=e
+if(!this.editorWrapperElement.contains(t)){this._dismissTypeaheadWithoutSelection()
+this._closeTypeahead()}}_handleFocusIn(){var e,t
+null===(e=(t=this.args).onEditorFocus)||void 0===e||e.call(t)}_fireControlInteractionEvent(e){this.tracking.fireInteractionEvent(e)}_fireCustomTexteditorTrackingEvent(e,t,i){this.texteditorTracker.fireTrackingEvent(e,t,i)}_dismissTypeaheadType(e){if(!this.isDestroying){if(this.typeaheadPopulatedwithType===e){this._dismissTypeaheadWithoutSelection()
+this.typeaheadPopulatedwithType=null}this[`${e}ShouldOpen`]=!1
+this.isTypeaheadAbleToExpand||this._closeTypeahead()}}_closeTypeahead(){var e
+if(!this.isDestroying){this.mentionShouldOpen=!1
+this.hashtagShouldOpen=!1
+this.typeaheadPopulatedwithType=null
+this.typeaheadQuery=null
+null===(e=this.editorElement)||void 0===e||e.removeAttribute("aria-owns")}}_calculateTypeaheadTopOffset(){var e
+const t=c.default&&this.args.useScrollY?window.scrollY:0,i=c.default?(0,l.getElementDistanceFromTopOfWindow)(this.editorWrapperElement)-this.editorWrapperElement.getBoundingClientRect().top-t:0,{editor:n}=this,{index:r=0}=n.getSelection()||{},{top:o,height:a}=n.getBounds(r),s=null!==(e=this.args.lineHeightOffSet)&&void 0!==e?e:1.2
+return this.editorWrapperElement.offsetTop+o+a*s-i}_handleKeyUp(e){if(this.typeaheadPopulatedwithType&&(0,a.isEscapeKey)(e)){e.stopPropagation()
+this._dismissTypeaheadWithoutSelection()
+this._closeTypeahead()}}_trackTypeaheadRenderedImpressionsSetup(e){switch(this.typeaheadType){case s.TYPEAHEAD_TYPES_MAP.MENTION:{const t={searchHeader:(0,T.getSearchHeaderForMentionsTrackingEvent)(this.typeaheadQuery),results:(0,l.getFormattedMentionsResults)(e)}
+this._fireCustomTexteditorTrackingEvent("MentionSuggestionImpressionEvent",t,s.TYPEAHEAD_TYPES_MAP.MENTION)
+break}case s.TYPEAHEAD_TYPES_MAP.HASHTAG:{const t={searchHeader:(0,b.getSearchHeaderForHashtagTrackingEvent)(this.typeaheadQuery),results:(0,l.getFormattedHashtagResults)(e),hashtagSourceType:"TYPEAHEAD"}
+this._fireCustomTexteditorTrackingEvent("HashtagSuggestionImpressionEvent",t,s.TYPEAHEAD_TYPES_MAP.HASHTAG)
+break}}}_adjustTypeaheadPositioning(){const e=this.editorWrapperElement.querySelector(".editor-typeahead-fetch")
+e&&(e.style.top=`${this.typeaheadTopPosition}px`)}initEditor(e){if(e){var t,i,n,r,o,a
+const l=(0,d.setupQuillEditor)(e,(()=>!this.isDestroying&&this.dropDownIsActive),this.args.placeholder,this.i18n.lookupTranslation("components/participate-text-editor@text-editor","i18n_editor_aria-label")(),(e=>(0,m.debounceTask)(this,"_handleReportedTextChanges",e,300)),this._openTypeahead.bind(this),this._dismissTypeaheadType.bind(this),this._generateNewWorkflowId.bind(this),this._fireCustomTexteditorTrackingEvent.bind(this),this._fireControlInteractionEvent.bind(this),this.args.shouldFocusOnRender,this.args.trackableRootObject)
+this.editor=l
+this.editorWrapperElement=e
+this.editorElement=this.editorWrapperElement.querySelector(s.QUILL_EDITOR_SELECTOR)
+this.args.initialContent&&this._appendTextAndMentions(this.args.initialContent,this.args.cursorRange)
+this.args.disabled&&this.editor.disable()
+null===(t=(i=this.args).setInsertContentHandler)||void 0===t||t.call(i,this._insertContent.bind(this))
+null===(n=(r=this.args).setResetEditorHandler)||void 0===n||n.call(r,this._resetEditor.bind(this))
+null===(o=(a=this.args).setFocusEditorHandler)||void 0===o||o.call(a,this._focusEditor.bind(this))
+this._setupScrollHandler()}}onEditorEvents(e){switch(null==e?void 0:e.type){case"keydown":this._handleKeyDown(e)
+break
+case"keyup":this._handleKeyUp(e)
+break
+case"focusin":this._handleFocusIn()
+break
+case"focusout":this._handleFocusOut(e)}}_handleKeyDown(e){if(!e.isComposing)if(this.typeaheadPopulatedwithType){if((0,a.isDownArrowKey)(e))this._handleArrowKey(e,s.KEY_DOWN)
+else if((0,a.isUpArrowKey)(e))this._handleArrowKey(e,s.KEY_UP)
+else if((0,a.isTabKey)(e)){this._dismissTypeaheadWithoutSelection()
+this._closeTypeahead()}else if((0,a.isEnterKey)(e))if(this.dropDownIsActive){var t,i
+e.preventDefault()
+null===(t=(i=this.args).enterKeyPressed)||void 0===t||t.call(i)}else{this._dismissTypeaheadWithoutSelection()
+this._closeTypeahead()}}else if((0,a.isEnterKey)(e)&&this.args.onSubmitCommentOnEnter){var n,r
+const{text:e,mentions:t}=(0,h.deltaToTextMentionsObject)(this.editor.getContents())
+null===(n=(r=this.args).onSubmitCommentOnEnter)||void 0===n||n.call(r,e.trimEnd(),t)}}onDisabledAttrChange(){this.editor.enable(!this.args.disabled)}onEditorDragover(e){e.preventDefault()
+return!1}onTypeaheadResultsRendered(e){if(c.default&&!Ember.isEmpty(e)){var t
+this._adjustTypeaheadPositioning()
+this.typeaheadPopulatedwithType=this.typeaheadType
+this.typeheadResultsList=e
+null===(t=this.editorElement)||void 0===t||t.setAttribute("aria-owns",this.args.triggeredContentId)
+this._trackTypeaheadRenderedImpressionsSetup(e)}}transformTypeaheadResponse(e){return e.length?this._filterTypeaheadResults(e):e}typeaheadSelect(e,t){var i
+this._closeTypeahead()
+const n=this.typeheadResultsList.indexOf(t),r=(0,u.normalizeTypeaheadResponse)(t)
+null===(i=this.onTypeaheadSelect)||void 0===i||i.call(this,r,n)}},D=(0,n.default)(q.prototype,"tracking",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),H=(0,n.default)(q.prototype,"lix",[E],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),R=(0,n.default)(q.prototype,"i18n",[x],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),L=(0,n.default)(q.prototype,"hashtagShouldOpen",[v],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),j=(0,n.default)(q.prototype,"mentionShouldOpen",[S],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),U=(0,n.default)(q.prototype,"workflowId",[_],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),Y=(0,n.default)(q.prototype,"typeaheadQuery",[A],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),F=(0,n.default)(q.prototype,"commentary",[k],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),(0,n.default)(q.prototype,"initEditor",[M],Object.getOwnPropertyDescriptor(q.prototype,"initEditor"),q.prototype),(0,n.default)(q.prototype,"onEditorEvents",[O],Object.getOwnPropertyDescriptor(q.prototype,"onEditorEvents"),q.prototype),(0,n.default)(q.prototype,"onDisabledAttrChange",[I],Object.getOwnPropertyDescriptor(q.prototype,"onDisabledAttrChange"),q.prototype),(0,n.default)(q.prototype,"onEditorDragover",[w],Object.getOwnPropertyDescriptor(q.prototype,"onEditorDragover"),q.prototype),(0,n.default)(q.prototype,"onTypeaheadResultsRendered",[C],Object.getOwnPropertyDescriptor(q.prototype,"onTypeaheadResultsRendered"),q.prototype),(0,n.default)(q.prototype,"transformTypeaheadResponse",[N],Object.getOwnPropertyDescriptor(q.prototype,"transformTypeaheadResponse"),q.prototype),(0,n.default)(q.prototype,"typeaheadSelect",[P],Object.getOwnPropertyDescriptor(q.prototype,"typeaheadSelect"),q.prototype),q)
+e.default=z
+Ember._setComponentTemplate(W,z)}))
+define("participate-text-editor/components/typeahead-fetch",["exports"],(function(e){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+const t=Ember.HTMLBars.template({id:"r5Xzg8KP",block:'{"symbols":["results","content","result","@typeaheadSelect","@typeaheadQuery","@triggered-content","&attrs","@debouncePeriod","@onTypeaheadResultsRendered","@fetchFn"],"statements":[[11,"div"],[24,0,"editor-typeahead-fetch"],[17,7],[12],[2,"\\n  "],[8,"basic-typeahead@ta-fetch",[],[["@debouncePeriod","@keywords","@onFetchResolve","@fetchFn"],[[32,8],[32,5],[32,9],[32,10]]],[["default"],[{"statements":[[2,"\\n"],[6,[37,4],[[32,1]],null,[["default"],[{"statements":[[6,[37,3],[[30,[36,2],[[32,6]],null]],[["auxilliaryKeywords","className"],[[32,5],"editor-typeahead__typeahead-tray"]],[["default"],[{"statements":[[6,[37,1],[[30,[36,0],[[30,[36,0],[[32,1]],null]],null]],null,[["default"],[{"statements":[[2,"          "],[8,[32,2,["selectable"]],[],[["@className","@keywordsValue","@onSelect","@value"],["editor-typeahead__typeahead-item",[32,3,["text","text"]],[32,4],[32,3]]],[["default"],[{"statements":[[2,"\\n            "],[8,"search-ta-kit@search-typeahead-hit-v2",[],[["@hit"],[[32,3]]],null],[2,"\\n          "]],"parameters":[]}]]],[2,"\\n"]],"parameters":[3]}]]]],"parameters":[2]}]]]],"parameters":[]}]]],[2,"  "]],"parameters":[1]}]]],[2,"\\n"],[13]],"hasEval":false,"upvars":["-track-array","each","ember-holy-futuristic-template-namespacing-batman@-translate-dynamic-2","component","if"]}',meta:{moduleName:"participate-text-editor/components/typeahead-fetch.hbs"}})
+var i=Ember._setComponentTemplate(t,Ember._templateOnlyComponent())
+e.default=i}))
+define("participate-text-editor/config/environment",["exports"],(function(e){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+let t
+try{const e="participate-text-editor/config/environment",i=document.querySelector('meta[name="'+e+'"]').getAttribute("content")
+t=JSON.parse(unescape(i))}catch(e){t={}}var i=t
+e.default=i}))
+define.alias("ember-m3/adapters/interop-debug-adapter","participate-text-editor/data-adapter")
+define.alias("ember-named-blocks-polyfill/helpers/-has-block-params","participate-text-editor/helpers/-has-block-params")
+define.alias("ember-named-blocks-polyfill/helpers/-has-block","participate-text-editor/helpers/-has-block")
+define.alias("ember-named-blocks-polyfill/helpers/-is-named-block-invocation","participate-text-editor/helpers/-is-named-block-invocation")
+define.alias("ember-named-blocks-polyfill/helpers/-named-block-invocation","participate-text-editor/helpers/-named-block-invocation")
+define.alias("ember-cli-pemberly-i18n/helpers/bidi-dir","participate-text-editor/helpers/bidi-dir")
+define.alias("ember-cli-pemberly-i18n/helpers/format-currency","participate-text-editor/helpers/format-currency")
+define.alias("ember-cli-pemberly-i18n/helpers/format-date","participate-text-editor/helpers/format-date")
+define.alias("ember-cli-pemberly-i18n/helpers/format-name","participate-text-editor/helpers/format-name")
+define.alias("ember-cli-pemberly-i18n/helpers/format-number","participate-text-editor/helpers/format-number")
+define.alias("ember-cli-pemberly-i18n/helpers/format-time","participate-text-editor/helpers/format-time")
+define.alias("ember-cli-pemberly-i18n/helpers/format-truncate","participate-text-editor/helpers/format-truncate")
+define.alias("ember-cli-pemberly-i18n/helpers/is-any-locale","participate-text-editor/helpers/is-any-locale")
+define.alias("ember-cli-pemberly-i18n/helpers/is-cjk-language","participate-text-editor/helpers/is-cjk-language")
+define.alias("ember-cli-pemberly-i18n/helpers/is-rtl-content","participate-text-editor/helpers/is-rtl-content")
+define.alias("ember-cli-pemberly-i18n/helpers/is-rtl-language","participate-text-editor/helpers/is-rtl-language")
+define.alias("artdeco-icons-web/helpers/li-icon","participate-text-editor/helpers/li-icon")
+define.alias("ember-app-scheduler/helpers/route-idle","participate-text-editor/helpers/route-idle")
+define.alias("ember-cli-pemberly-i18n/helpers/t-link-to","participate-text-editor/helpers/t-link-to")
+define.alias("ember-cli-pemberly-i18n/helpers/t-make-name","participate-text-editor/helpers/t-make-name")
+define.alias("ember-cli-pemberly-i18n/helpers/t","participate-text-editor/helpers/t")
+define("participate-text-editor/initializers/artdeco",["exports","artdeco-eyeglass"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.initialize=r
+e.default=void 0
+const i=[t.default.contextClasses,t.default.floatingLabel,t.default.focusOutline]
+function n(e,t){const n=e[t]
+e[t]=function(){i.forEach((e=>e&&"function"==typeof e.teardown&&e.teardown()))
+n&&"function"==typeof n&&n.call(e)}}function r(e){if("undefined"!=typeof document){i.forEach((e=>e.install()))
+"function"==typeof e.willDestroy?n(e,"willDestroy"):"function"==typeof e.destroy&&n(e,"destroy")}}var o={name:"artdeco",initialize:r}
+e.default=o}))
+define.alias("ember-cli-pemberly-i18n/initializers/i18n","participate-text-editor/initializers/i18n")
+define("participate-text-editor/initializers/icons",["exports","artdeco-icons-web/src/icons","participate-text-editor/config/environment"],(function(e,t,i){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+function n(e){throw e}var r={name:"icons",initialize:function(){const{environment:e,APP:r}=i.default
+let o,a
+r&&({artdecoCustomSpriteUrl:o,artdecoCustomSpriteName:a}=r)
+const s="test"!==e
+t.default.load(s,o,a).catch(n)}}
+e.default=r}))
+define.alias("ember-m3/initializers/m3-store","participate-text-editor/initializers/m3-store")
+define("participate-text-editor/initializers/override-safestring",["exports"],(function(e){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.initialize=r
+e.default=void 0
+const t="ember-glimmer",i="ember-htmlbars/utils/string",n="@ember/-internals/glimmer"
+function r(){let e,r=Ember.__loader.require.has
+if(r(n))e=Ember.__loader.require(n).SafeString
+else if(r(t))e=Ember.__loader.require(t).SafeString
+else{if(!r(i))throw new Error("Cannot locate SafeString class for overriding")
+e=Ember.__loader.require(i).SafeString}e.prototype.toHTML=function(){return jSecure.sanitizeHTML(this.toString())}
+e.prototype.toString=function(){return`${this.string}`}}var o={name:"override-safestring",initialize:r}
+e.default=o}))
+define("participate-text-editor/instance-initializers/-t-link-to",["exports","ember-stdlib/utils/is-browser"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.initialize=i
+e.default=void 0
+function i(e){t.default&&e.lookup("service:-t-link-to")}var n={name:"-t-link-to",initialize:i}
+e.default=n}))
+define.alias("@ember/render-modifiers/modifiers/did-insert","participate-text-editor/modifiers/did-insert")
+define.alias("@ember/render-modifiers/modifiers/did-update","participate-text-editor/modifiers/did-update")
+define("participate-text-editor/modifiers/editor-events",["exports","ember-modifier"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var i=(0,t.modifier)(((e,t)=>{let[i]=t
+e.addEventListener("keydown",i)
+e.addEventListener("keyup",i)
+e.addEventListener("focusin",i)
+e.addEventListener("focusout",i)
+return()=>{e.removeEventListener("keydown",i)
+e.removeEventListener("keyup",i)
+e.removeEventListener("focusin",i)
+e.removeEventListener("focusout",i)}}))
+e.default=i}))
+define.alias("@ember/render-modifiers/modifiers/will-destroy","participate-text-editor/modifiers/will-destroy")
+define.alias("ember-cli-pemberly-i18n/services/-t-link-to","participate-text-editor/services/-t-link-to")
+define.alias("artdeco-modal/services/artdeco-modal","participate-text-editor/services/artdeco-modal")
+define.alias("client-sensor-web/services/client-sensor","participate-text-editor/services/client-sensor")
+define.alias("ember-cli-pemberly-i18n/services/formatter","participate-text-editor/services/formatter")
+define.alias("ember-cli-pemberly-i18n/services/i18n","participate-text-editor/services/i18n")
+define.alias("@linkedin/ember-pem/services/internal-event-utils","participate-text-editor/services/internal-event-utils")
+define.alias("@linkedin/ember-pem/services/internal-pem-tracking","participate-text-editor/services/internal-pem-tracking")
+define.alias("ember-cli-pemberly-i18n/services/locale","participate-text-editor/services/locale")
+define.alias("ember-m3/services/m3-schema-manager","participate-text-editor/services/m3-schema-manager")
+define.alias("@linkedin/ember-pem/services/pem-tracking","participate-text-editor/services/pem-tracking")
+define.alias("ember-cli-pemberly-m3/services/store","participate-text-editor/services/store")
+define("participate-text-editor/utils/constants",["exports"],(function(e){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.TYPEAHEAD_TYPES_MAP=e.BLOT_ALLOWLIST=e.KEY_DOWN=e.KEY_RIGHT=e.KEY_UP=e.KEY_LEFT=e.QUILL_EDITOR_SELECTOR=e.QUILL_CONTAINER_CLASS=void 0
+e.QUILL_CONTAINER_CLASS="editor-content"
+e.QUILL_EDITOR_SELECTOR=".ql-editor"
+e.KEY_LEFT="Left"
+e.KEY_UP="Up"
+e.KEY_RIGHT="Right"
+e.KEY_DOWN="Down"
+const t=new Set(["hashtag","mention","guard"])
+e.BLOT_ALLOWLIST=t
+e.TYPEAHEAD_TYPES_MAP={MENTION:"mention",HASHTAG:"hashtag"}}))
+define("participate-text-editor/utils/editor-setup",["exports","@babel/runtime/helpers/esm/objectSpread2","participate-text-editor/utils/constants","participate-text-editor/utils/quill/modules/hashtag","participate-text-editor/utils/quill/modules/mention","participate-text-editor/utils/quill/modules/clipboard","quill","participate-text-editor/utils/quill/quill-keyboard-bindings"],(function(e,t,i,n,r,o,a,s){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.setupQuillEditor=function(e,n,r,o,d,c,u,h,p,m,g,f){const T={"typeahead enter":{key:"enter",handler:()=>!n()}},b=(0,t.default)((0,t.default)({},s.enterKeyBinding),T),y=new a.default(e.querySelector(`.${i.QUILL_CONTAINER_CLASS}`),{placeholder:r,formats:["hashtag","mention","guard","bold"],modules:{mention:{actions:{openTypeahead:c,closeTypeahead:u,generateNewWorkflowId:h,fireCustomTexteditorTrackingEvent:p,fireControlInteractionEvent:m},trackingData:f},hashtag:{actions:{openTypeahead:c,closeTypeahead:u,generateNewWorkflowId:h,fireCustomTexteditorTrackingEvent:p,fireControlInteractionEvent:m},trackingData:f},keyboard:{bindings:b},history:{delay:50,maxStack:300}}})
+delete y.getModule("keyboard").bindings[l.keys.TAB]
+const E=y.container.querySelector(i.QUILL_EDITOR_SELECTOR)
+E.setAttribute("aria-placeholder",r)
+E.setAttribute("aria-label",o)
+E.setAttribute("role","textbox")
+E.setAttribute("aria-multiline",!0)
+E.setAttribute("data-test-ql-editor-contenteditable",!0)
+d&&y.on("text-change",(()=>{d(y.getContents())}))
+g&&y.focus()
+return y}
+a.default.register({"modules/mention":r.default,"modules/hashtag":n.default,"modules/clipboard":o.default})
+const l=a.default.import("modules/keyboard")}))
+define.alias("client-sensor-web/utils/helpers","participate-text-editor/utils/helpers")
+define("participate-text-editor/utils/quill/blots/hashtag",["exports","quill"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+const i=t.default.import("blots/inline")
+class n extends i{}n.className="ql-hashtag"
+n.tagName="strong"
+n.blotName="hashtag"
+var r=n
+e.default=r}))
+define("participate-text-editor/utils/quill/blots/mention",["exports","@babel/runtime/helpers/esm/toConsumableArray","quill","participate-text-editor/utils/quill/mention-utils"],(function(e,t,i,n){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+const r=i.default.import("blots/inline"),o=i.default.import("blots/cursor"),a={characterData:!0,characterDataOldValue:!0,subtree:!0,childList:!0}
+let s=0
+class l extends r{constructor(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{}
+super(...arguments)
+this.allowSegmentDeletion=!1
+this.textSections=[]
+this.originalText=""
+t.entityUrn&&(this.entityUrn=t.entityUrn)
+if(t.objectUrn){this.objectUrn=t.objectUrn
+this.allowSegmentDeletion=(0,n.allowSegmentDeletion)(this.objectUrn)}if(t.originalText){this.textSections=l.getMentionTextSections(t.originalText)
+this.originalText=t.originalText
+this.cachedDomText=t.originalText}this.observer=new MutationObserver((e=>{this.update(e)}))
+this._enableMentionObserver()}static create(e){const t=super.create.apply(this,arguments)
+t.setAttribute("href","#")
+t.setAttribute("data-entity-urn",e.entityUrn)
+t.setAttribute("data-guid",e.guid||l.createGuid())
+t.setAttribute("data-object-urn",e.objectUrn)
+t.setAttribute("data-original-text",e.originalText)
+t.setAttribute("spellcheck","false")
+return t}static formats(e){const t={}
+t.entityUrn=e.getAttribute("data-entity-urn")||""
+t.guid=e.getAttribute("data-guid")||""
+t.objectUrn=e.getAttribute("data-object-urn")||""
+t.originalText=e.getAttribute("data-original-text")||""
+return t}static createGuid(){return s++}static getMentionTextSections(e){const t=/\s+/g,i=[]
+let n=0,r=t.exec(e)
+for(;r;){const[o]=r,a=e.slice(n,r.index)
+a&&i.push({text:a,isSeparator:!1})
+i.push({text:o,isSeparator:!0})
+n=r.index+o.length
+r=t.exec(e)}const o=e.slice(n,e.length)
+o&&i.push({text:o,isSeparator:!1})
+return i}static joinMentionTextSections(e){return e.map((e=>e.text)).join("")}static getTextIndexOfSection(e,t){const i=e.indexOf(t)
+if(-1===i)throw new Error(`Section not found in textSections - section: ${t}, textSections: ${e}`)
+return e.slice(0,i).reduce(((e,t)=>e+t.text.length),0)}optimize(){super.optimize.apply(this,arguments)
+let{next:e,prev:t}=this
+if((0,n.nextBlotIsEqualMention)(e,this)){this._disableMentionObserver()
+for(;(0,n.nextBlotIsEqualMention)(e,this);){e.moveChildren(this)
+e.remove()
+e=e.next}this._enableMentionObserver()}else if((0,n.prevBlotIsEqualMention)(t,this)){this._disableMentionObserver()
+for(;(0,n.nextBlotIsEqualMention)(e,this);){t.moveChildren(this)
+t.remove()
+t=t.prev}this._enableMentionObserver()}}update(e){super.update.apply(this,arguments)
+e.forEach((e=>{if(!e.oldValue||!e.oldValue.includes(o.CONTENTS)){if("childList"===e.type&&e.target.className.includes(l.className)){if((0,t.default)(e.addedNodes).some((e=>e.classList&&e.classList.contains(o.className)))){this.scroll.emitter.emit("mention-will-reload")
+return}this.textSections=l.getMentionTextSections(this.domNode.innerText)}if("characterData"===e.type){const t=i.default.find(e.target)
+if(!(t&&t.parent instanceof l))return
+e.target.length<e.oldValue.length&&this.didRemoveMentionTextOnUpdate(e)
+e.target.length>e.oldValue.length&&this.didAddMentionTextOnUpdate(e)
+e.target.length===e.oldValue.length&&e.target.data!==e.oldValue&&this.didAddMentionTextOnUpdate(e)}}}))}updateDomText(e){this._disableMentionObserver()
+this.children.head.domNode.data=e
+this._enableMentionObserver()
+this.cachedDomText=e}deleteAt(e,t){if(0!==e||t!==this.length())if(this.cachedDomText.length<this.domNode.innerText.length)this.updateDomText(this.cachedDomText)
+else{super.deleteAt.apply(this,arguments)
+this.removeWordsInRange(e,e+t)}else{this.scroll.emitter.emit("mention-range-will-change",this,0)
+super.deleteAt.apply(this,arguments)}}_disableMentionObserver(){this.observer.disconnect()}_enableMentionObserver(){this.observer.observe(this.domNode,a)}_shouldRemoveMentionSegment(){const e=l.joinMentionTextSections(this.textSections)
+return this.domNode.innerText!==e}didAddMentionTextOnUpdate(e){const t=e.oldValue,i=e.target.textContent,r=i.length-t.length,o=(0,n.getIndexFirstDiff)(t,i),a=l.joinMentionTextSections(this.textSections)
+if(0!==o)if(o+r!==this.length())this.scroll.emitter.emit("mention-will-unwrap",this)
+else{const e=i.substring(o),n=t+e
+if(n===a||n===this.originalText){this.textSections=l.getMentionTextSections(n)
+return}this.scroll.emitter.emit("mention-move-text-after",this,e)
+this.cachedDomText=this.domNode.innerText}else{const e=i.substring(o,r),n=e+t
+if(n===a||n===this.originalText){this.textSections=l.getMentionTextSections(n)
+return}this.scroll.emitter.emit("mention-move-text-before",this,e)
+this.cachedDomText=this.domNode.innerText}}didRemoveMentionTextOnUpdate(e){if(this._shouldRemoveMentionSegment()){const t=e.oldValue,i=e.target.textContent,r=(0,n.getIndexFirstDiff)(t,i)
+this.removeWordsInRange(r,r+1)}}static getSectionsToRevove(e,i,n){const r=new Set
+e.forEach(((t,o)=>{const a=l.getTextIndexOfSection(e,t),s=a+t.text.length
+if(a<=i&&i<s){r.add(o)
+t.isSeparator&&e[o-1]&&r.add(o-1)}if(a<n&&n<=s){r.add(o)
+e[o-1]&&r.add(o-1)}i<a&&s<n&&r.add(o)}))
+return(0,t.default)(r).sort(((e,t)=>e-t))}removeWordsInRange(e,t){if(this.textSections.length<=2||!this.allowSegmentDeletion){this.scroll.emitter.emit("mention-will-remove",this)
+return}const i=l.getSectionsToRevove(this.textSections,e,t)
+if(!i.length)return
+const n=l.getTextIndexOfSection(this.textSections,this.textSections[i[0]])
+this.textSections=this.textSections.filter(((e,t)=>!i.includes(t)))
+if(this.textSections.length){this.textSections[0].isSeparator&&this.textSections.shift()
+this.textSections[this.textSections.length-1].isSeparator&&this.textSections.pop()}this.updateDomText(l.joinMentionTextSections(this.textSections))
+this.scroll.emitter.emit("mention-range-will-change",this,n)}}l.className="ql-mention"
+l.tagName="a"
+l.blotName="mention"
+var d=l
+e.default=d}))
+define("participate-text-editor/utils/quill/delta-model-transformers",["exports","rich-text/utils/constants","participate-text-editor/utils/quill/hashtag-utils"],(function(e,t,i){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.deltaFromTextMentionsObject=function(e){const n={ops:[]},{text:r="",mentions:o=[]}=e,a=function(e,n){const r=(0,t.getHashtagMatchRegex)()
+let o=r.exec(e)
+const a=[]
+for(;o;){const t={}
+t.match=(0,i.getHashtagAttributes)(o)
+t.type="hashtag"
+a.push(t)
+o=r.exec(e)}return n.concat(a).sort(((e,t)=>e.match.start-t.match.start))}(r,o)
+a.length?a[0].match.start>0&&n.ops.push({insert:r.slice(0,a[0].match.start)}):n.ops.push({insert:r})
+a.forEach(((e,t)=>{const i=function(e){if(Ember.get(e,"entity.entityUrn"))return{insert:e.match.text,attributes:{mention:{entityUrn:Ember.get(e,"entity.entityUrn"),objectUrn:Ember.get(e,"entity.objectUrn"),originalText:e.match.text,text:e.match.text}}}
+if("hashtag"===e.type)return{insert:e.match.text,attributes:{hashtag:!0}}
+return null}(e)
+n.ops.push(i)
+const o=e.match.start+e.match.length,s=a[t+1]
+s?s.match.start>o&&n.ops.push({insert:r.slice(o,s.match.start)}):n.ops.push({insert:r.slice(o)})}))
+n.ops.push({insert:"\n"})
+return n}
+e.deltaToTextMentionsObject=function(e){let t=0
+const i=e.ops.reduce(((e,i)=>{const n=i.insert
+e.text+=n
+i.attributes&&i.attributes.mention&&e.mentions.push({match:{start:t,length:n.length,text:n},entity:{entityUrn:i.attributes.mention.entityUrn}})
+t+=n.length
+return e}),{text:"",mentions:[]})
+i.text.endsWith("\n")&&(i.text=i.text.slice(0,-1))
+return i}}))
+define("participate-text-editor/utils/quill/formats/guard",["exports","quill"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+const i=t.default.import("blots/inline")
+class n extends i{static create(){return super.create()}static formats(){return!0}}n.className="ql-guard"
+n.blotName="guard"
+n.CONTENT="​"
+var r=n
+e.default=r}))
+define("participate-text-editor/utils/quill/hashtag-utils",["exports","@babel/runtime/helpers/esm/objectSpread2","quill","rich-text/utils/constants","participate-text-editor/utils/constants"],(function(e,t,i,n,r){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.getHashtagAttributes=a
+e.getValidHashtags=s
+e.createDeltaWithPotentialHashtag=l
+e.transformDelta=function(e){let i=new o
+e.forEach(((e,a)=>{const{operations:s,previousOperation:d}=function(e,i,o){const a=(0,t.default)((0,t.default)({},e),{},{attributes:Object.keys(e.attributes||{}).reduce(((t,i)=>{r.BLOT_ALLOWLIST.has(i)&&(t[i]=e.attributes[i])
+return t}),{})}),s=a.insert,d=i>0&&o[o.length-1]
+if(a.attributes.hashtag)return function(e,t,i){const r=l(e)
+if(t&&t.attributes&&t.attributes.hashtag){const e=r[0].insert,o=(0,n.getHashtagMatchRegex)()
+let a=e.match(o)
+if(a&&a[0]===e)return{operations:[{insert:i.insert}]}
+const s=t.insert+i.insert
+a=s.match(o)
+if(a&&a[0]===s){t.insert+=i.insert
+return{previousOperation:t}}}else if(t&&!t.attributes&&t.insert[t.insert.length-1].match(/[/&\w]/)){t.insert+=i.insert
+return{previousOperation:t}}return{operations:r}}(s,d,a)
+if(a.attributes.mention||a.attributes.guard)return{operations:[a]}
+return function(e,t){const i=l(e)
+if(t&&t.attributes&&t.attributes.hashtag){const[e]=i
+if(e.attributes&&e.attributes.hashtag)i[0]={insert:e.insert}
+else if(!e.attributes){const r=(0,n.getHashtagMatchRegex)()
+let o=t.insert
+const a=e.insert
+let s=0
+for(;s<a.length;s++){const e=o+a.slice(s,s+1),t=e.match(r)
+if(!t||t[0]!==e)break
+o=e}const l=a.slice(s)
+l?i[0].insert=l:i.shift()
+if(t.insert!==o){t.insert=o
+return{operations:i,previousOperation:t}}return{operations:i}}}else if(t&&!t.attributes&&t.insert.length&&t.insert[t.insert.length-1].match(/[/&\w]/)){t.insert+=i[0].insert
+i.shift()
+return{previousOperation:t,operations:i}}return{operations:i}}(s,d)}(e,a,i.ops)
+d&&(i.ops[i.ops.length-1]=d)
+s&&s.length>0&&(i=i.concat(new o(s)))}))
+return i}
+const o=i.default.import("delta")
+function a(e){const[,t,i]=e
+return{text:i,start:t?e.index+1:e.index,length:i.length}}function s(e){const t=(0,n.getHashtagMatchRegex)()
+let i=t.exec(e)
+const r=[]
+for(;i;){r.push(a(i))
+i=t.exec(e)}return r}function l(e){const t=s(e),i=[]
+if(0===t.length)i.push({insert:e})
+else{const n=t[t.length-1],r=n.start+n.length===e.length
+let o=0
+t.forEach((t=>{o<t.start&&i.push({insert:e.slice(o,t.start)})
+i.push({insert:t.text,attributes:{hashtag:!0}})
+o=t.start+t.length}))
+r||i.push({insert:e.slice(o)})}return i}}))
+define("participate-text-editor/utils/quill/mention-utils",["exports","quill","global-utils/utils/is-browser","global-utils/utils/urn-converter","participate-text-editor/utils/quill/utils","participate-text-editor/utils/quill/blots/mention"],(function(e,t,i,n,r,o){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.allowSegmentDeletion=function(e){if(!e)return!1
+const{type:t}=(0,n.fromUrn)(e,!1)
+return a.includes(t)}
+e.getIndexFirstDiff=function(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"",t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:""
+if(null!==e&&null!==t&&e!==t){let i=0
+for(;e[i]===t[i];)i++
+return i}return-1}
+e.isCharacterWhiteSpace=function(e,t){if(e){return new RegExp(/^\s$/).test(e.charAt(t))}return!1}
+e.nextBlotIsEqualMention=function(e,t){return e instanceof o.default&&e.prev===t&&(0,r.isShallowEqualObjects)(t.formats().mention,e.formats().mention)}
+e.getSearchQuery=function(e,t){const{before:i,current:n}=function(e,t){const i=[]
+let n=null,r=0
+for(let o=0;o<e.ops.length;o++){const a=e.ops[o]
+r+=a.insert.length
+if(!(r<t)){n=a
+break}i.push(a)}return{before:i,current:n}}(e,t.index)
+if(!n)return null
+const o=function(e,t){const i=e.insert.slice(0,t.index)
+return s.reduce(((e,t)=>{const n=i.lastIndexOf(t)
+if(-1===n)return e
+const r=n+t.length
+return e&&e.indexAfterToken>r?e:{indexAfterToken:r,token:t}}),null)}(n,t)
+if(null===o)return null
+const a=o.indexAfterToken-o.token.length
+if(a>0&&(0,r.isAlphaNumericCharacter)(n.insert[a-1]))return null
+const l=i.reduce(((e,t)=>e+t.insert.length),0),d=o.indexAfterToken+l,c=t.index-l
+if(c===o.indexAfterToken){if(n.insert.slice(o.indexAfterToken).match(/^[\u3000-\u303f\u3040-\u309f\u30a0-\u30ff\uff00-\uff9f\u4e00-\u9faf\u3400-\u4dbf]/))return{query:n.insert[o.indexAfterToken],queryStartIndex:o.indexAfterToken,queryToken:o.token}
+if(!n.insert.slice(o.indexAfterToken).match(/^\w+/))return{query:"a",queryStartIndex:d,queryToken:o.token}}let u=n.insert.slice(o.indexAfterToken,c)
+const h=n.insert.slice(c).match(/^\w+/)
+h&&(u+=h[0])
+if(!function(e){return-1===e.indexOf("\n")&&e.length<=100}(u))return null
+return{query:u,queryToken:o.token,queryStartIndex:d}}
+e.prevBlotIsEqualMention=function(e,t){return e instanceof o.default&&e.next===t&&(0,r.isShallowEqualObjects)(t.formats().mention,e.formats().mention)}
+e.didDeleteTriggerCharacter=function(e,t){if(!e||!t)return!1
+return t.diff(e).ops.some((e=>e.insert&&s.some((t=>e.insert.includes(t)))))}
+e.scrubInsertedMentions=function(e){let t=!1
+return{scrubbedDelta:{ops:e.ops.map((e=>{if((null==e?void 0:e.insert)&&((null==(i=null==e?void 0:e.attributes)?void 0:i.mention)&&!(i.mention.entityUrn&&i.mention.objectUrn&&i.mention.originalText))){t=!0
+return{insert:e.insert}}var i
+return e}))},hasChanged:t}}
+e.queueSetSelection=l
+e.setContents=function(e,i){let n=arguments.length>2&&void 0!==arguments[2]?arguments[2]:t.default.sources.API
+const r=e.getSelection()
+e.setContents(i)
+r&&l(e,r.index,n)}
+e.MENTION_DENOTATION_CHARACTERS=e.MENTION_QUERY_LENGTH_LIMIT=e.DEFAULT_TYPEAHEAD_QUERY_NO_TEXT=void 0
+const a=["member"]
+e.DEFAULT_TYPEAHEAD_QUERY_NO_TEXT="a"
+e.MENTION_QUERY_LENGTH_LIMIT=100
+const s=["@","@","＠"]
+e.MENTION_DENOTATION_CHARACTERS=s
+function l(e){let n=arguments.length>1&&void 0!==arguments[1]?arguments[1]:0,r=arguments.length>2&&void 0!==arguments[2]?arguments[2]:0
+i.default&&window.requestAnimationFrame((()=>{e.setSelection(n,r,t.default.sources.USER)}))}}))
+define("participate-text-editor/utils/quill/modules/clipboard",["exports","quill"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+const i=t.default.import("modules/clipboard"),n=t.default.import("delta")
+e.default=class extends i{onPaste(e){var t
+if(null===(t=e.clipboardData)||void 0===t?void 0:t.getData("text/link-preview")){const t=this.quill.getSelection()
+if(!t)return super.onPaste(e)
+e.preventDefault()
+const i=e.clipboardData.getData("text/plain"),r=(new n).retain(t.index).delete(t.length).insert(i)
+this.quill.updateContents(r,"silent")
+const o=i.length+t.index,a=0
+this.quill.setSelection(o,a,"silent")}return super.onPaste(e)}}}))
+define("participate-text-editor/utils/quill/modules/hashtag",["exports","@babel/runtime/helpers/esm/toConsumableArray","@babel/runtime/helpers/esm/objectSpread2","quill","participate-text-editor/utils/quill/blots/hashtag","participate-text-editor/utils/quill/hashtag-utils","participate-text-editor/utils/tracking/hashtag-tracking","participate-text-editor/utils/constants"],(function(e,t,i,n,r,o,a,s){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+const l=n.default.import("core/module"),d=n.default.import("delta")
+class c extends l{static register(){n.default.register("blots/hashtag",r.default)}constructor(e,t){super(e,t)
+this.options=(0,i.default)({actions:{openTypeahead:null,closeTypeahead:null,generateNewWorkflowId:null,fireCustomTexteditorTrackingEvent:null,fireControlInteractionEvent:null},trackingData:{controlType:null}},t)
+this.actions=this.options.actions
+this.trackingData=this.options.trackingData
+this.context=this.options.context
+this.hasTriggeredTypeahead=!1
+this.attachMatchers()
+this.attachEvents()}_setTypeaheadTriggeredValue(e){this.hasTriggeredTypeahead=e}compositionEnd(){const e=this.quill.getContents()
+this.createFormattedHashtags(e)
+const t=this.quill.getSelection()
+t&&this.detectTypeaheadTrigger(t.index)}attachMatchers(){var e;(e=this.quill.clipboard).addMatcher.apply(e,(0,t.default)(c.matchHashtag()))}attachEvents(){this.quill.on("hashtag-unwrap",this.unwrapHashtag.bind(this))
+this.quill.on("editor-change",this.onEditorChange.bind(this))
+this.quill.root.addEventListener("compositionend",this.compositionEnd.bind(this))}static matchHashtag(){return[r.default.className,(e,t)=>{const[i]=t.ops
+return(new d).insert(i.insert)}]}unwrapHashtag(e){const t=this.quill.getIndex(e),i=e.length()
+this.quill.removeFormat(t,i)}onEditorChange(e){for(var t=arguments.length,i=new Array(t>1?t-1:0),r=1;r<t;r++)i[r-1]=arguments[r]
+const o=i[2]
+if(!this.quill.selection.composing)if(e===n.default.events.TEXT_CHANGE&&o===n.default.sources.USER){const e=this.quill.getContents(),t=i[0].ops.some((e=>e.insert&&e.insert.includes("\n")))
+this.createFormattedHashtags(e,t)
+const n=this.quill.getSelection()
+if(!n)return
+this.detectTypeaheadTrigger(n.index)}else if(e===n.default.events.SELECTION_CHANGE){const[e,t]=i
+!e||t&&e.index===t.index||this.detectTypeaheadTrigger(e.index)}}insertHashtag(e,t,i){const r=e.text.length+t,o=(new d).retain(t).delete(i).insert(e.text,{hashtag:!0}).insert(" ")
+this.quill.updateContents(o,n.default.sources.USER)
+this.quill.setSelection(r+" ".length,n.default.sources.USER)}onTypeaheadSelect(e,t){const i=this.quill.getSelection(!0).index,[n]=this.quill.getLeaf(i),r=n.text.slice(1),o=(0,a.getSearchHeaderForHashtagTrackingEvent)(r)
+if(!n)return
+const l=this.quill.getIndex(n),d={text:e.text}
+this.insertHashtag(d,l,n.text.length)
+this.actions.fireControlInteractionEvent(`${this.trackingData.controlType}_select_hashtag_typeahead`)
+this.actions.fireCustomTexteditorTrackingEvent(a.EVENTS.ACTION,(0,a.getHashtagSuggestionActionSelectEventPayload)(o,e,t),s.TYPEAHEAD_TYPES_MAP.HASHTAG)
+this._setTypeaheadTriggeredValue(!1)}createFormattedHashtags(e){let t=arguments.length>1&&void 0!==arguments[1]&&arguments[1]
+const i=e.diff((0,o.transformDelta)(e.ops))
+i.ops.length>0?this.quill.updateContents(i):t&&this.quill.setContents(e)}fireDismissTypeaheadTracking(e){if(e){const t=(0,a.getSearchHeaderForHashtagTrackingEvent)(e)
+this.actions.fireCustomTexteditorTrackingEvent(a.EVENTS.ACTION,(0,a.getHashtagSuggestionActionDismissEventPayload)(t),s.TYPEAHEAD_TYPES_MAP.HASHTAG)}}detectTypeaheadTrigger(e){const[t]=this.quill.getLeaf(e)
+if(t&&t.parent instanceof r.default){const e=t.text.substring(1)
+this.query=e
+this.actions.openTypeahead({typeaheadQuery:e,typeaheadType:r.default.blotName,onTypeaheadSelect:this.onTypeaheadSelect.bind(this),onDismissWithoutSelection:this.fireDismissTypeaheadTracking.bind(this)})
+if(!this.hasTriggeredTypeahead){this.actions.generateNewWorkflowId()
+const t=(0,a.getSearchHeaderForHashtagTrackingEvent)(e)
+this.actions.fireCustomTexteditorTrackingEvent(a.EVENTS.START,(0,a.getHashtagSuggestionStartEvent)(t,this.trackingData.controlType),s.TYPEAHEAD_TYPES_MAP.HASHTAG)}this._setTypeaheadTriggeredValue(!0)}else{this._setTypeaheadTriggeredValue(!1)
+this.actions.closeTypeahead(r.default.blotName)}}}e.default=c}))
+define("participate-text-editor/utils/quill/modules/mention",["exports","@babel/runtime/helpers/esm/objectSpread2","@babel/runtime/helpers/esm/toConsumableArray","quill","participate-text-editor/utils/quill/blots/mention","participate-text-editor/utils/quill/formats/guard","participate-text-editor/utils/quill/mention-utils","participate-text-editor/utils/quill/utils","participate-text-editor/utils/tracking/mentions-tracking","participate-text-editor/utils/constants"],(function(e,t,i,n,r,o,a,s,l,d){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+const c=n.default.import("core/module"),u=n.default.import("delta"),h=n.default.import("parchment"),p=n.default.import("blots/text")
+e.default=class extends c{static register(){n.default.register("blots/mention",r.default)
+n.default.register("formats/guard",o.default)}constructor(e,t){super(e,t)
+this.range=e.getSelection()
+this.options={actions:{openTypeahead:null,closeTypeahead:null,generateNewWorkflowId:null,fireCustomTexteditorTrackingEvent:null,fireControlInteractionEvent:null},trackingData:{associatedEntityUrn:null,controlType:null,rootObject:null,trackingId:null}}
+Object.assign(this.options,t)
+this.actions=this.options.actions
+this.trackingData=this.options.trackingData
+this.attachEvents()
+this.attachMatchers()
+this.hasTriggeredTypeahead=!1}attachMatchers(){var e,t;(e=this.quill.clipboard).addMatcher.apply(e,(0,i.default)(this.matchMention()));(t=this.quill.clipboard).addMatcher.apply(t,(0,i.default)(this.matchTextNode()))}attachEvents(){this.quill.on("mention-will-reload",this.onMentionWillReload.bind(this))
+this.quill.on("mention-move-text-before",this.onMentionMoveTextBefore.bind(this))
+this.quill.on("mention-move-text-after",this.onMentionMoveTextAfter.bind(this))
+this.quill.on("mention-range-will-change",this.onMentionWillChange.bind(this))
+this.quill.on("mention-will-unwrap",this.onMentionWillUnwrap.bind(this))
+this.quill.on("mention-will-remove",this.onMentionWillRemove.bind(this))
+this.quill.on(n.default.events.TEXT_CHANGE,this.onTextChange.bind(this))
+this.quill.on(n.default.events.EDITOR_CHANGE,((e,t)=>{e===n.default.events.SELECTION_CHANGE&&this.onSelectionChange(t)}))
+this.quill.root.addEventListener("compositionstart",this.compositionStart.bind(this))
+this.quill.root.addEventListener("compositionend",this.compositionEnd.bind(this))}_setTypeaheadTriggeredValue(e){this.hasTriggeredTypeahead=e}_removeGuards(){const e=this.quill.scroll.descendants(o.default,0,this.quill.getLength()),t=e.length
+e.forEach(((e,i)=>{const n=this.quill.getIndex(e)
+e.domNode.parentNode.removeChild(e.domNode)
+t===i+1&&(0,a.queueSetSelection)(this.quill,n)}))}matchTextNode(){return[3,(e,t)=>{const i=this.range.index,[n]=this.quill.getLeaf(i),r=n.parent
+this.isIndexInsideMention(i,r)&&this.quill.removeFormat(this.quill.getIndex(r),r.length())
+return t}]}matchMention(){return[".ql-mention",(e,t)=>{const i=t.ops[0],n=r.default.formats(e)
+n.guid=r.default.createGuid()
+i.attributes={mention:n}
+i.attributes.mention.originalText=i.insert
+const a=new u([{insert:o.default.CONTENT,attributes:{guard:!0}}])
+return(new u).concat(a).concat(t).concat(a)}]}isIndexInsideMention(e,t){if(t instanceof r.default){const{start:i,end:n}=(0,s.getBlotIndices)(this.quill,t)
+return e>i&&e<n}return!1}onMentionMoveTextAfter(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:""
+if(!(e.next instanceof p)){const t=h.create("text","")
+null==e.next?t.insertInto(e.parent):e.parent.insertBefore(t,e.next)}e.deleteAt(e.length()-t.length,t.length,!0)
+e.next.insertAt(0,t)
+this.onMentionWillChange(e,e.length()+1)}onMentionWillReload(){(0,a.setContents)(this.quill,this.quill.getContents())}onMentionMoveTextBefore(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:""
+if(!(e.prev instanceof p)){const t=h.create("text","")
+e.parent.insertBefore(t,e)}e.deleteAt(0,t.length,!0)
+e.prev.insertAt(e.prev.length(),t)
+this.onMentionWillChange(e,0)}onTextChange(e,t){if(this.quill.selection.composing)return
+const i=this.quill.getSelection()
+null!==i&&(this.range=i)
+if(null==e?void 0:e.ops){const{scrubbedDelta:i,hasChanged:n}=(0,a.scrubInsertedMentions)(this.quill.getContents())
+n&&(0,a.setContents)(this.quill,i,"silent")
+const r=i||e,o=null==r?void 0:r.ops.some((e=>e.attributes&&e.attributes.mention)),s=this.quill.getContents()
+o?this._removeGuards():(0,a.didDeleteTriggerCharacter)(t,s)&&this._setTypeaheadTriggeredValue(!1)}this.willDetectTypeaheadTrigger()}onSelectionChange(e){null!==e&&(this.range=e)
+this.willDetectTypeaheadTrigger()}onMentionWillChange(e,t){const i=this.quill.getIndex(e)+t,n=(0,l.getSearchHeaderForMentionsTrackingEvent)()
+this.actions.fireCustomTexteditorTrackingEvent(l.EVENTS.MENTION_ACTION,(0,l.getMentionSuggestionActionEventPayload)(n,l.ACTIONS.PERSONALIZE),d.TYPEAHEAD_TYPES_MAP.MENTION);(0,a.queueSetSelection)(this.quill,i)}onMentionWillRemove(e){const t=this.quill.getIndex(e)
+e.remove()
+const i=(0,l.getSearchHeaderForMentionsTrackingEvent)()
+this.actions.fireCustomTexteditorTrackingEvent(l.EVENTS.MENTION_ACTION,(0,l.getMentionSuggestionActionEventPayload)(i,l.ACTIONS.DELETE),d.TYPEAHEAD_TYPES_MAP.MENTION)
+this.currentMentionToken=null;(0,a.queueSetSelection)(this.quill,t)}onMentionWillUnwrap(e){const t=this.range.index
+this.quill.removeFormat(this.quill.getIndex(e),e.length())
+const i=(0,l.getSearchHeaderForMentionsTrackingEvent)()
+this.actions.fireCustomTexteditorTrackingEvent(l.EVENTS.MENTION_ACTION,(0,l.getMentionSuggestionActionEventPayload)(i,l.ACTIONS.DELETE),d.TYPEAHEAD_TYPES_MAP.MENTION)
+this.quill.setSelection(t,0,n.default.sources.USER)}compositionStart(){this.actions.closeTypeahead(d.TYPEAHEAD_TYPES_MAP.MENTION)}compositionEnd(){const e=this.quill.getSelection()
+if(e){this.range=e
+this.willDetectTypeaheadTrigger()}}willDetectTypeaheadTrigger(){if(null==this.range)return
+const e=(0,a.getSearchQuery)(this.quill.getContents(),this.range)
+if(e){this.actions.openTypeahead({typeaheadQuery:e.query,typeaheadType:d.TYPEAHEAD_TYPES_MAP.MENTION,onTypeaheadSelect:this.insertMention.bind(this,e.queryStartIndex,e.queryToken,e.query.length),onDismissWithoutSelection:this.fireDismissTypeaheadTracking.bind(this)})
+if(!this.hasTriggeredTypeahead){this.actions.generateNewWorkflowId()
+this.actions.fireControlInteractionEvent(`${this.trackingData.controlType}_mention_start`)
+const t=(0,l.getSearchHeaderForMentionsTrackingEvent)(e.query)
+this.actions.fireCustomTexteditorTrackingEvent(l.EVENTS.START,(0,l.getMentionSuggestionStartEventPayload)(t,e.queryToken,this.trackingData),d.TYPEAHEAD_TYPES_MAP.MENTION)}this._setTypeaheadTriggeredValue(!0)}else this.actions.closeTypeahead(d.TYPEAHEAD_TYPES_MAP.MENTION)}fireDismissTypeaheadTracking(e){if(e){const t=(0,l.getSearchHeaderForMentionsTrackingEvent)(e)
+this.actions.fireCustomTexteditorTrackingEvent(l.EVENTS.MENTION_ACTION,(0,l.getMentionSuggestionActionEventPayload)(t,l.ACTIONS.DISMISS),d.TYPEAHEAD_TYPES_MAP.MENTION)}}insertMention(e,i,r,s,c){const h=e-i.length,p=i.length,m=(0,t.default)((0,t.default)({},s),{},{originalText:s.text}),g=this.quill.getText(e,r).trim()||a.DEFAULT_TYPEAHEAD_QUERY_NO_TEXT
+let f=0
+const T=this.quill.getText(e,m.originalText.length).toLowerCase()
+f=r>=m.originalText.length?p+r:T===m.originalText.toLowerCase()?p+m.originalText.length:p+r
+delete m.text
+const b=(new u).retain(h).delete(f).insert(o.default.CONTENT,{guard:!0}).insert(m.originalText,{mention:m}).insert(o.default.CONTENT,{guard:!0})
+this.quill.updateContents(b,n.default.sources.USER)
+const y=h+m.originalText.length;(0,a.queueSetSelection)(this.quill,y)
+const E=(0,l.getSearchHeaderForMentionsTrackingEvent)(g)
+this.actions.fireControlInteractionEvent(`${this.trackingData.controlType}_mention_select`)
+this.actions.fireCustomTexteditorTrackingEvent(l.EVENTS.MENTION_ACTION,(0,l.getMentionSuggestionActionSelectEventPayload)(E,m,c),d.TYPEAHEAD_TYPES_MAP.MENTION)
+this._setTypeaheadTriggeredValue(!1)
+this.actions.closeTypeahead(d.TYPEAHEAD_TYPES_MAP.MENTION)}}}))
+define("participate-text-editor/utils/quill/quill-keyboard-bindings",["exports","quill"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.enterKeyBinding=void 0
+const i={"entity enter":{key:t.default.import("modules/keyboard").keys.ENTER,format:["mention"],handler:function(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},i=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{}
+const n=e.index
+if(n&&""!==i.prefix&&""!==i.suffix){const[e]=this.quill.getLeaf(n)
+this.quill.removeFormat(this.quill.getIndex(e),e.length(),t.default.sources.SILENT)
+this.quill.setSelection(n)}return!0}}}
+e.enterKeyBinding=i}))
+define("participate-text-editor/utils/quill/utils",["exports"],(function(e){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.normalizeTypeaheadResponse=function(){var e,t,i,n,r
+let o=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{}
+return{entityUrn:null!==(e=Ember.get(o,"targetUrn"))&&void 0!==e?e:"",objectUrn:null!==(t=Ember.get(o,"objectUrn"))&&void 0!==t?t:"",text:null!==(i=null===(n=Ember.get(o,"text.text"))||void 0===n?void 0:n.normalize())&&void 0!==i?i:"",trackingId:null!==(r=Ember.get(o,"trackingId"))&&void 0!==r?r:""}}
+e.getBlotIndices=function(e,t){if(e&&t){const i={}
+i.start=e.getIndex(t)
+i.end=i.start+t.length()
+return i}return}
+e.trimLineBreakFromDelta=function(e){const t=e.ops[e.ops.length-1]
+t.insert&&t.insert.endsWith("\n")&&(t.insert=t.insert.slice(0,-1))}
+e.isShallowEqualObjects=function(e,t){if(e===t)return!0
+if("object"!=typeof e||null==e)return!1
+if("object"!=typeof t||null==t)return!1
+const i=Object.keys(e)
+if(i.length!==Object.keys(t).length)return!1
+return i.every((i=>e[i]===t[i]))}
+e.isAlphaNumericCharacter=function(e){if(e)return!!e.match(t)
+return!1}
+const t=new RegExp(/\w/)}))
+define("participate-text-editor/utils/text-editor-utils",["exports","participate-text-editor/utils/constants","participate-text-editor/utils/quill/mention-utils"],(function(e,t,i){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.getFormattedMentionsResults=function(e){const t=[]
+e.forEach(((e,i)=>{const n={entityUrn:Ember.get(e,"objectUrn"),position:{index:i},isCacheHit:!1}
+t.push(n)}))
+return t}
+e.getFormattedHashtagResults=function(e){const t=[]
+e.forEach(((e,i)=>{const n={entityUrn:Ember.get(e,"objectUrn"),position:{index:i},trackingId:Ember.get(e,"trackingId")}
+t.push(n)}))
+return t}
+e.isValidTypeaheadType=function(e){return Object.values(t.TYPEAHEAD_TYPES_MAP).includes(e)}
+e.mentionQueryMatchesRecommendedMention=function(e,t){if(t===i.DEFAULT_TYPEAHEAD_QUERY_NO_TEXT)return!0
+const n=t.toLowerCase()
+return e.toLowerCase().startsWith(n)}
+e.getElementDistanceFromTopOfWindow=function(e){let t=0,i=e
+for(;i;){t+=i.offsetTop-i.scrollTop+i.clientTop
+i=i.offsetParent}return t}}))
+define("participate-text-editor/utils/tracking/hashtag-tracking",["exports"],(function(e){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.getSearchHeaderForHashtagTrackingEvent=function(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:""
+return{query:e,platform:"TYPEAHEAD"}}
+e.getHashtagSuggestionStartEvent=function(e,t){return{searchHeader:e,associatedInputControlUrn:`${t}_add_commentary`,hashtagSourceType:"TYPEAHEAD"}}
+e.getHashtagSuggestionActionDismissEventPayload=function(e){return{searchHeader:e,actionType:t.DISMISS,hashtagSourceType:"TYPEAHEAD"}}
+e.getHashtagSuggestionActionSelectEventPayload=function(e,i,n){return{searchHeader:e,actionType:t.SELECT,result:{entityUrn:i.objectUrn,position:{index:n},trackingId:i.trackingId},hashtagSourceType:"TYPEAHEAD"}}
+e.ACTIONS=e.EVENTS=void 0
+e.EVENTS={START:"HashtagSuggestionStartEvent",ACTION:"HashtagSuggestionActionEvent"}
+const t={SELECT:"SELECT",DISMISS:"DISMISS"}
+e.ACTIONS=t}))
+define("participate-text-editor/utils/tracking/mentions-tracking",["exports"],(function(e){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.getMentionSuggestionStartEventPayload=function(e,t){let i=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{}
+const n=i.objectUrn&&i.trackingId?{objectUrn:i.objectUrn,trackingId:i.trackingId}:null
+return{searchHeader:e,associatedInputControlUrn:`${i.controlType}_mention_start`,associatedEntityUrn:(null==i?void 0:i.associatedEntityUrn)?i.associatedEntityUrn:null,rootObject:n,mentionType:"EXPLICIT",mentionStartOperator:t}}
+e.getSearchHeaderForMentionsTrackingEvent=function(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:""
+return{query:e,platform:"TYPEAHEAD",vertical:"PEOPLE"}}
+e.getMentionSuggestionActionSelectEventPayload=function(e,i,n){return{searchHeader:e,actionType:t.SELECT,result:{entityUrn:i.objectUrn,position:{index:n}}}}
+e.getMentionSuggestionActionEventPayload=function(e,t){let i=arguments.length>2&&void 0!==arguments[2]?arguments[2]:null
+return{searchHeader:e,actionType:t,result:i}}
+e.ACTIONS=e.EVENTS=void 0
+e.EVENTS={START:"MentionSuggestionStartEvent",VIEW_LIST:"MentionSuggestionImpressionEvent",MENTION_ACTION:"MentionSuggestionActionEvent",RESULT_IMPRESSION:"MentionResultHit"}
+const t={SELECT:"SELECT",DELETE:"DELETE",DISMISS:"DISMISS",PERSONALIZE:"PERSONALIZE"}
+e.ACTIONS=t}))
+define("participate-text-editor/utils/tracking/texteditor-tracking",["exports","participate-text-editor/utils/constants","ember-cli-pemberly-tracking/utils/uuid"],(function(e,t,i){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+e.default=class{constructor(e,t){this.trackingService=e
+this.workflowId=t
+this.typeaheadSearchId=i.default.v4()}fireTrackingEvent(e,i,n){i.searchHeader&&(i.searchHeader.rawSearchId=this.typeaheadSearchId)
+switch(n){case t.TYPEAHEAD_TYPES_MAP.MENTION:i.mentionWorkflowId=this.workflowId
+this.trackingService.fireTrackingPayload(e,i)
+break
+case t.TYPEAHEAD_TYPES_MAP.HASHTAG:i.hashtagWorkflowId=this.workflowId
+this.trackingService.fireTrackingPayload(e,i)}}}}))
+define.alias("ember-vector-images/utils/vector-url","participate-text-editor/utils/vector-url")
+
+//# sourceMappingURL=engine.map

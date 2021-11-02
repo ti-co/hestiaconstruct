@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/style.css" type="text/css">
+  <title>Hestia Construct</title>
+</head>
+
+<body class='scroller'>
+  <!-- Navbar Component -->
+  <nav id='navbar' class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #05057c; display:fixed; border-bottom: solid; border-bottom-color: #FFDB58">
+    <a class="navbar-brand ml-2" href="">
+      <span id="logoInNavbar" style="color: #FFDB58">Hestia Construct</span>
+    </a>
+   
+    <button id="navbutton" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul id='navbar-nav' class="navbar-nav ml-auto">
+        <li class="nav-item ml-2 active" onclick="toggleNavButton()">
+          <a class="nav-link" href="#intro">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item ml-2" onclick="toggleNavButton()">
+          <a class="nav-link" href="#about">Over ons</a>
+        </li>
+        <li class="nav-item ml-2" onclick="toggleNavButton()">
+          <a class="nav-link" href="#beton">Betonbouw</a>
+        </li>
+        <li class="nav-item ml-2" onclick="toggleNavButton()">
+          <a class="nav-link" href="#services">services</a>
+        </li>
+        <li class="nav-item ml-2" onclick="toggleNavButton()">
+          <a class="nav-link" href="#projects">projecten</a>
+        </li>
+        <li class="nav-item ml-2" onclick="toggleNavButton()">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Jumbotron -->
+  <div id="intro" class="jumbotron jumbotron-fluid mb-0" style="position: relative; overflow:hidden; height: 100vh; margin-top: -3rem; display: flex; flex-direction: column; justify-content: center; align-items: left">
+    <video style="position: absolute; opacity: 0.3; top: 2rem; height: auto; width: 100vw;" autoplay muted allowfullscreen preload="auto">
+      <source src="./resources/bgvid.mp4" type="video/mp4" >
+    </video>
+    <div id="animation" class="ml-5 py-3" style="width: 30%; height: 85%; border: 2px solid #FFDB58; display: flex; flex-direction: column; justify-content: center; align-items: center">
+      <h1 style="color: #05057c">Hestia Construct</h1>
+      <h2 style='font-size: 1.1rem; color: #05057c'> Uw specialist in betonbouw</h2>
+      <p class="my-3" style="color: #05057c; text-align: justify; max-width: 80%">Heb je interesse in een moderne, energiezuinige en oerdegelijke nieuwbouw woning? Lees hieronder meer, of neem vrijblijvend contact met ons op.</p>
+      <h5>Tel: +32499113069</h5>
+      <h5>
+        <a href='mailto:steven@hestiaconstruct.be'>e-mail: steven@hesiaconsruct.be</a>
+      </h5>
+      <a href='#about' style="color: #05057c">
+        <i class="fa fa-angle-double-down fa-4x" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+
+
+  <div class='container-fluid my-5' style='overflow: hidden;'>  
+    <!--sliders section with JS and handlebars (see script on top of html)-->
+    <div id='frame'></div>
+    <div class="row justify-content-center my-5" style="width:80%; margin:auto">
+      <h5>
+        Hestia Construct zet haar ervaring uit eigen bouwprojecten in om uw droomhuis waar te maken. Als professionele bouwfirma kiezen we in onze aanpak voor beton als duurzaam materiaal. Zo realiseren we gehele woningen in prefab betonbouw, maar u kan bij ons ook terecht voor een gegoten kelder in beton.      
+      </h5>
+    </div>
+    <div id='intro-offer' >
+      <div class="row justify-content-center" style="width:90%; margin:auto">
+        <div class="col-10 col-md-6" style="border-right: 2px solid hsl(240, 16%, 18%);">
+          <!-- Fourth card goes here -->
+          <div class="card p-1" style="border: none; width:100%; background-color: transparent;">
+            <div class="card-body d-flex" style="flex-direction: column; align-items: center; text-align: justify"> 
+              <h4>Snelbouw met Prefab Betonpanelen</h4>
+              <img class="py-2" src="./resources/prefabwall.jpg" width="80%" height="320px" alt="prefab betonpanelen">
+              <p class="card-text" style="width:80%">Prefab betonpanelen komen in de juiste vorm en grootte op de werf aan, waardoor je in enkele dagen tijd een woningstructuur ziet verschijnen. Snelheid betekent bij betonbouw met prefab panelen bovendien geen inboeten aan kwaliteit omdat het nog wel degelijk om duurzaam beton gaat dat op dezelfde wijze als gewone beton geprepareerd wordt. Leuk extraatje is bovendien dat zaken zoals elektriciteitsleidingen meteen in het beton aangebracht kunnen worden zodat er nadien niet meer geslepen hoeft te worden. Dat bespaart heel wat tijd en stof. </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-10 col-md-6">
+          <!-- Fourth card goes here -->
+          <div class="card p-1" style="border: none; width:100%; background-color: transparent;">
+            <div class="card-body d-flex" style="flex-direction: column; align-items: center; text-align: justify"> 
+              <h4>Kelders in Gegoten Beton</h4>
+              <img class="py-2" src="./resources/betonkelder.jpg" width="80%" height="320px" alt="kelder in gegoten beton">
+              <p class="card-text" style="width:80%">Een betonkelder is waterdicht. We zien bij kelders vaak vochtproblemen opduiken, maar dat is bij betonkelders niet het geval.
+                Beton heeft het grote voordeel dat het snel bereid en uitgedroogd kan worden. Hierdoor kan een betonkelder al op korte tijd afgewerkt worden.
+                Door de snelle bouwtijd zien we ook een strikte planning die kan toegepast worden.
+                Beton is een flexibel materiaal dan op verschillende manieren bewerkt kan worden zodat het aan uw eisen en wensen voldoet.
+                Elektriciteitsvoorziening en -leidingen kunnen in het beton aangebracht worden zodat uw betonkelder er meteen tiptop in orde uitziet.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services section -->
+  <div id='services' class="my-5 container-fluid" style="
+  background-image: url(./resources/pexels-paweł-l-1381782.jpg); 
+  background-repeat: no-repeat;
+  height: 110vh;
+  background-size: cover;
+  ">
+    <div class="row justify-content-center">
+      <h4 class="sliderTitle text-white mt-5 mb-2">Onze Diensten</h4>
+    </div>
+    <!-- Image Reasons Section -->
+    <div class="row justify-content-center mb-5" style="height: auto">
+      <div class="col-10 col-md-3 mt-5 d-flex">
+        <!-- first card goes here -->
+        <div class="card" style="align-self:stretch; width: 100%; text-align: center;">
+          <div class="card-img-top" style="padding:1rem; " >
+            <i class="fa fa-key fa-5x" aria-hidden="true" style="color: #FFDB58"></i>
+          </div>
+          <br>
+          <u><h5 class="sliderTitle" style="color: #000028">Sleutel op de deur</h5></u>
+          <div class="card-body">
+            <p class="card-text" style="font-size: 1.1rem; text-align: justify; padding: 0.5rem"> Wij ontfermen ons over uw bouwproject van A tot Z. U kiest uiteraard de gewenste materialen voor de afwerking, en waar nodig helpen wij u om goede beslissingen te maken. Verder hoeft u zich in principe geen zorgen te maken over de voortgang en kwaliteitsbewaking, maar uiteraard koppelen we op regelmatige basis terug.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-10 col-md-3 mt-5 d-flex">
+        <!-- 2nd card goes here -->
+        <div class="card" style="align-self:stretch; width: 100%; text-align: center;">
+          <div class="card-img-top" style="padding:1rem; " >
+            <i class="fa fa-wind fa-5x" aria-hidden="true" style="color:#000028"></i>
+          </div>
+          <br>
+          <u><h5 class="sliderTitle" style="color: #000028">wind- en waterdicht</h5></u>
+          <div class="card-body">
+            <p class="card-text" style="font-size: 1.1rem; text-align: justify; padding: 0.5rem"> Wij plaatsen de ruwbouw in prefab beton, en u organiseert zelf de verdere afwerking. Bij een wind- en waterdichte (of casco) woning worden de grondwerken, metselwerken, ramen en dak opgeleverd. De (binnen)afwerking, zoals sanitair, ventilatie, badkamer en keuken, is niet inbegrepen.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-10 col-md-3 mt-5 d-flex">
+        <!-- 3th card goes here -->
+        <div class="card" style="align-self:stretch; width: 100%; text-align: center;">
+          <div class="card-img-top" style="padding:1rem;">
+            <i class="fa fa-hands-helping fa-5x" aria-hidden="true" style="color: #d2d1cd"></i>
+          </div>
+          <br>
+          <u><h5 class="sliderTitle" style="color: #000028">Assistentie voor Zelfbouwers</h5></u>
+          <div class="card-body">
+            <p class="card-text" style="font-size: 1.1rem; text-align: justify; padding: 0.5rem">Wilt u zelf bouwen met prefab beton, maar weet u niet goed hoe eraan te beginnen? dan kunt u op ons een beroep doen voor advies en ondersteuning.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+  <div class="container-fluid">
+    <div class="row justify-content-center my-5" style="width:80%; margin:auto">
+      <h4 class="sliderTitle my-4">De Voordelen van Prefab Beton</h4>
+      <p>Hestia Construct streeft ernaar om de kwalitieve en energiezuinige woningen te bouwen in beton, en dit aan een betaalbare prijs. De keuze van beton is gestoeld op de vergelijking tussen verschillende bouwmaterialen voor onze eigen projecten, en is voor onszelf voor de hand liggend. We zetten hieronder nog even de belangrijkste voordelen op een rijtje: </p>
+    </div>
+    <div class="row justify-content-center" style="width:80%; margin:auto">
+      <div class="col-10 col-md-6" style="background-color: grey;">
+        <!-- Fourth card goes here -->
+        <div class="card p-5 text-white" style="border: none; width:100%; background-color: grey;">
+          <i class="" aria-hidden="true"></i>
+          <div class="card-body d-flex" style="flex-direction: column; align-items: center; text-align: justify">
+            <h4>Snellere bouwtijd</h4>
+            <p class="card-text">Onze aanpak op basis van prefab beton maakt het mogelijk om binnen 10 weken toe te werken naar een wind-en waterdichte woning. Isolatie en leidingen (elektriciteit, vloerverwarming…) kunnen reeds geïntegreerd worden bij de productie van de wanden. Wanden zijn glad en kunnen direct behangen of geschilderd worden.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-10 col-md-6" style="background-color: blue;">
+        <!-- Fourth card goes here -->
+        <div class="card p-5 text-white" style="border: none; width:100%; background-color: blue; ">
+          <i class="" aria-hidden="true"></i>
+          <div class="card-body d-flex" style="flex-direction: column; align-items: center; text-align: justify">
+            <h4>Betere isolatie</h4>
+            <p class="card-text">Beton scoort uitstekend op vlak van isolatie en luchtkwaliteit. Zo heeft beton een laag s-peil, en een goede luchtdichtheid. De nodige uitsparingen worden nauwkeurig berekend en op maat gemaakt bij de productie. Een lage energiewoning of volledige passiefbouw is dus zeker binnen handbereik.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center mb-2" style="width:80%; margin:auto">  
+      <div class="col-10 col-md-6" style="background-color: blue;">
+        <!-- Fourth card goes here -->
+        <div class="card p-5 text-white" style="border: none; width:100%; background-color: blue;">
+          <i class="" aria-hidden="true"></i>
+          <div class="card-body d-flex" style="flex-direction: column; align-items: center; text-align: justify">
+            <h4>Meer comfort en design</h4>
+            <p class="card-text">De mogelijkheden naar design toe zijn legio. Onze bouwmethode leent zich tot grote overspanningen en raampartijen , waardoor het gevoel van ruimtelijkheid toeneemt. De hoge thermische inertie zorgt voor een meer constante binnentemperatuur doorheen het jaar. </p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-10 col-md-6" style="background-color: grey;">
+        <!-- Fourth card goes here -->
+        <div class="card p-5 text-white" style="border: none; width:100%; background-color: grey;">
+          <i class="" aria-hidden="true"></i>
+          <div class="card-body d-flex" style="flex-direction: column; align-items: center; text-align: justify">
+            <h4>Sterkere kwaliteit </h4>
+            <p class="card-text">Beton staat hoe dan ook voor stevigheid en kwaliteit. Het is ook zeer veilige bouwmethode: brandveilig, en waterdicht. Doordat prefab wanden in de meest ideale omstandigheden kunnen geproduceerd worden, in een fabrieksomgeving, beschikken we over een zeer hoge betonkwaliteit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- About section -->
+  <div id='about' class="container-fluid mt-5" style="height: 80vh; background-image: url(./resources/concrete_BG_wall.jpg); background-repeat: no-repeat; background-size: cover;">
+    <div class="row justify-content-center my-4" style="width:90%; margin:auto">
+      <div class="my-3 col-10 justify-content-center">
+        <h2 class="sliderTitle display-5">Over ons</h2>
+      </div>
+      <div class="col-10 col-md-5 my-2" style='color: #05057c; text-align: justify;'>
+        <p id="" class="mt-1 p-2" style="font-size: large;"> 
+          Na het realiseren van enkele verbouwingen voor onszelf en na jarenlang onderzoek in verband met verschillende bouwsystemen werd het tijd om een nieuw project te realiseren. 
+          De kennis en visies die we doorheen onze projecten mochten vergaren gaf ons de mogelijkheid om een stapje verder te gaan.        
+          <br>
+          <br>
+          Hestia Construct werd dan ook in de zomer van 2021 opgericht door Steven en Ellen.
+          We kijken er dan ook naar uit om een volgend project aan te vatten.   
+        </p>
+      </div>
+      <div class="col-10 col-md-5 my-2 ml-2" style='color: #05057c; text-align: justify;'>
+        <div id="carouselExampleIndicators" style="width: 80%; align-items: stretch; height: 60%; background-color: black;" class="carousel slide d-flex" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          </ol>
+          <div class="carousel-inner d-flex" style="height: 520px; overflow: hidden">
+            <div class="carousel-item active">
+              <img class="d-block w-100" max-height='520px' src="./resources/3Dhouse1.png" alt="First slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" max-height='520px' src="./resources/3Dhouse2.png" alt="Second slide">
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>  
+      </div>    
+    </div>
+  </div>
+  
+  <!-- Contact form section -->
+  <div id='contact' class="container-fluid" style="background-color: #05057c">
+    <div class="row justify-content-center" >
+      <div class="col">
+        <br>
+        <h2 class="display-4 text-white text-center">Contact</h2>
+        <br>
+      </div>
+    </div>
+
+    <div class="row justify-content-center mt-3">
+      <div class="col-10 col-lg-6 mb-3">
+        <form
+          action="https://formspree.io/f/mnqorpeb"
+          method="POST"
+          target='_blank'
+          onsubmit="emptyForm()"
+        >
+          <div class="form-row my-2">
+            <input 
+              style="background-color:#d2d1cd; color:black; border: none" 
+              type="name" 
+              minlength=10 
+              class="form-control" 
+              name="name" 
+              id="inputName" 
+              placeholder="Your name" 
+              required 
+            />
+          </div>
+          <div class="form-row justify-content-center my-2">
+            <input 
+              style="background-color:#d2d1cd; color: black; border: none"
+              type="email" 
+              class="form-control" 
+              name="_replyto" 
+              id="inputEmail4" 
+              placeholder="Your e-mail" 
+              required 
+            />
+          </div>
+          <div class="form-row my-2">
+            <textarea style="background-color:#d2d1cd; color: black; border: none"
+            class="form-control" 
+            placeholder="Your message" 
+            rows=6 minlength=1 maxlength=500 name="message" required></textarea>
+          </div>
+          <div class="form-row mt-2 mb-5">
+            <button 
+              class="form-control  text-center text-white" 
+              style="background-color: #05057c; border: solid thin #FFDB58" 
+              type="submit"
+              target='_blank'
+            >Send Message</button>  
+          </div>   
+        </form>  
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- Footer -->
+  <footer 
+      id="footer"    
+      class="container-fluid" 
+      style="background-color: #d2d1cd">  
+    <br>
+      <div class='row justify-content-center'>
+        <div class='col-12 mt-3' style="text-align: center">
+          <p>made with ❤️ in Antwerp</p> 
+        </div>  
+      <div class='row justify-content-center'>
+        <div class='col-12' style="text-align: center">
+          <p>2021<span style="color:#FFDB58"> @ti-co</span> &copy;</p>  
+        </div>
+      </div>  
+  </footer>
+
+  <!-- Betonbouw section -->
+  <div id='beton' class="container-fluid">
+    <div style="width: 100%" class="mt-4 ml-1">
+      <h2 class="sliderTitle display-5">Betonbouw</h2>
+    </div>
+    <br>
+    <div class="my-2 ml-1" style='color: #05057c; text-align: justify;'>
+      <h3 class="sliderTitle display-1">Waarom Beton?</h3>
+      <p id="waarombeton" class="mt-1 p-lg-0" style="font-size: large;"> 
+        <img  class="cirkelbeton my-1" src="./resources/cirkelbeton.png"/>
+        We kennen allemaal het verhaal van de drie biggetjes, waarbij we een hele analyse kunnen maken van verschillende bouwsystemen.
+        Maar waarom niet toestaan om de verdere evolutie te omarmen? En een vierde biggetje te raadplegen?
+        Dankzij beton kunnen we voor heel wat nadelen van andere bouwsystemen een goede oplossing vinden. 
+        Beton is dan ook al jaren een gekend en succesvol alternatief om een woning te construeren.
+        Men kan beton ter plaatse op de werf storten d.m.v. bekistingen en men kan gebruik maken van prefab betonelementen, die op voorhand in de fabriek werden geconstrueerd.  
+      </p>
+    </div>
+    <div class="mt-4 d-flex" style="align-items: stretch; justify-content: space-between">
+      <div id="carouselExampleIndicators" style="width: 40%; align-items: stretch; height: 60%; background-color: black;" class="carousel slide d-flex" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner d-flex" style="height: 420px; align-items: stretch;">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="./resources/pexels-expect-best-323775.jpg" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="./resources/pexels-paweł-l-1381782.jpg" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="./resources/pexels-expect-best-323776.jpg" alt="Third slide">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>  
+      <div class="my-2 ml-1" style='color: #05057c; text-align: justify;'>
+        <h3 class="sliderTitle display-1">Algemene Voordelen van Betonbouw</h3>
+        <ul class="mt-1 ml-5 p-lg-0" style="font-size: large;"> 
+          <li>Snellere bouwtijd</li>
+          <li>Veel sterkere constructie</li>
+          <li>Beter geïsoleerd</li>
+          <li>Hoge thermische inertie – constante binnentemperatuur</li>
+          <li>Laag S-peil</li>
+          <li>Veilige en duurzame bouwmethode</li>
+          <li>Goede luchtdichtheid</li>
+          <li>Brandveilig</li>
+          <li>Waterdicht (kelder)</li>
+          <li>Grote overspanningen en raampartijen zijn mogelijk – grote ruimtelijkheid</li>
+          <li>Lage energiewoning of passiefbouw is mogelijk</li>
+        </ul>
+      </div>
+    </div>
+     
+    <div class="my-2 ml-1" style='color: #05057c; text-align: justify;'>
+      <h3 class="sliderTitle display-1">Bijkomende Voordelen van Prefabwanden</h3>
+      <ul class="mt-1 ml-5 p-lg-0" style="font-size: large;"> 
+        <li>Isolatie en (elektrische) leidingen kunnen reeds geïntegreerd worden bij de productie van de wanden</li>
+        <li>Wanden zijn glad en kunnen direct behangen of geschilderd worden</li>
+        <li>Hoge betonkwaliteit doordat de wanden in de meest ideale omstandigheden kunnen worden geproduceerd</li>
+      </ul>
+    </div>
+    <hr style="border-top: 1px solid hsl(240, 16%, 18%)">
+    <!-- Services section -->
+    <div class="mt-4">
+      <div class="my-2 ml-1" style='color: #05057c; text-align: justify;'>
+        <ul class="mt-1 ml-5 p-lg-0" style="font-size: large;"> 
+          <li>Totaalproject van A tot Z (sleutel op de deur)</li>
+          <li>Ruwbouw – winddicht</li>
+          <li>Assistentie Zelfbouwer</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap's JavaScript Files -->
+  <script src="./js/main.js" type="text/javascript" ></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/8f7d0a9c5a.js" crossorigin="anonymous"></script>
+</body>
+
+</html><!DOCTYPE html>
+
+    
+
+
+
+
+
+
+
+
+
+  
